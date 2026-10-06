@@ -64,3 +64,7 @@ A modell nem jósol külön Label-t: a jósolt Traffic Type-ot alakítjuk át (A
 - **A HistGradientBoosting instabil** (foldonként 0,81–0,93). Alapbeállításban 10%-ot félretesz a korai leállításhoz, így a ritka osztályokból még kevesebb tanítósor marad, és már 27 iteráció után leáll. Hangolással javulna, de alapbeállításban nem versenyképes a fákkal.
 - **Gyorsaság:** a DecisionTree és a RandomForest foldonként kb. 2 másodperc alatt tanul, a LogisticRegression 38, a HistGradientBoosting 12 másodperc alatt.
 - **Értelmezhetőség:** a DecisionTree egyetlen fa, a döntési útvonala végigkövethető. Ez a fa azonban 31 mély és 926 levelű, ezért egészében nem rajzolható le olvashatóan. A RandomForest fekete dobozabb, de mindkettő jellemzőfontossága mérhető (ML9).
+
+## Döntés
+
+**Mindkét fa alapú modellt továbbvisszük, két külön projektként: `projects/decision_tree/` és `projects/random_forest/`.** A LogisticRegression (macro F1 0,58, 3 875 benignnek vélt támadás) és a HistGradientBoosting (foldonként 0,81–0,93, instabil) kiesett. Mindkét projektben előbb GridSearchCV-vel hangoljuk a hiperparamétereket a train-halmazon, majd mindkét végső modell egyszer fut a teszthalmazon. A végén a két projekt eredményét összevetjük, de a teszteredmény alapján már nem hangolunk.
