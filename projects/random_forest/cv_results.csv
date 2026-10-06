@@ -1,0 +1,13 @@
+params,mean_f1_macro,std_f1_macro,mean_fit_s,rank
+"class_weight=balanced_subsample, max_features=sqrt, min_samples_leaf=2",0.9253656296658169,0.022278288925944925,36.23125276565552,1
+"class_weight=balanced_subsample, max_features=sqrt, min_samples_leaf=1",0.92287082976377,0.01587444922571229,36.05521535873413,2
+"class_weight=balanced_subsample, max_features=0.3, min_samples_leaf=2",0.9215650878674999,0.02061806388258669,47.165091800689694,3
+"class_weight=balanced_subsample, max_features=0.3, min_samples_leaf=1",0.9212036288484068,0.017598039239156916,51.73426270484924,4
+"class_weight=balanced, max_features=0.3, min_samples_leaf=1",0.915960289927883,0.03498079717565516,36.856745672225955,5
+"class_weight=balanced, max_features=sqrt, min_samples_leaf=1",0.9119604080826139,0.01832594629860911,22.181688356399537,6
+"class_weight=balanced, max_features=0.3, min_samples_leaf=2",0.9047975821890539,0.02581867672894046,35.2624370098114,7
+"class_weight=balanced_subsample, max_features=0.3, min_samples_leaf=5",0.8974196947565234,0.025246863695133702,45.73262009620667,8
+"class_weight=balanced, max_features=sqrt, min_samples_leaf=2",0.8946817118669133,0.025192097070841597,22.06283292770386,9
+"class_weight=balanced_subsample, max_features=sqrt, min_samples_leaf=5",0.8912055841086088,0.03233125091262608,33.903645515441895,10
+"class_weight=balanced, max_features=0.3, min_samples_leaf=5",0.8675307318655208,0.025524965704018666,35.41776127815247,11
+"class_weight=balanced, max_features=sqrt, min_samples_leaf=5",0.8531686193180402,0.021823224359404526,21.576622104644777,12

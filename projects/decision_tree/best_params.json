@@ -1,0 +1,4 @@
+{
+  "model__max_depth": 20,
+  "model__min_samples_leaf": 1
+}
