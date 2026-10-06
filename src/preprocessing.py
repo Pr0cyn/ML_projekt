@@ -48,3 +48,17 @@ def negative_to_nan_step(columns: list[str]) -> FunctionTransformer:
     return FunctionTransformer(
         negative_to_nan, kw_args={"columns": columns}, feature_names_out="one-to-one"
     ).set_output(transform="pandas")
+
+
+def preprocessing_steps(columns: list[str]) -> list[tuple]:
+    """Final preprocessing chosen in ML5-ML6: select 54 columns, inf -> NaN, median imputation.
+
+    Negative `Flow IAT Min` values are intentionally left unchanged (ML6 decision).
+    """
+    from sklearn.impute import SimpleImputer
+
+    return [
+        ("select", column_selector(columns)),
+        ("inf_to_nan", inf_to_nan_step()),
+        ("impute", SimpleImputer(strategy="median").set_output(transform="pandas")),
+    ]

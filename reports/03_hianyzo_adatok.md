@@ -50,3 +50,7 @@ A három kezelési mód 5-fold rétegzett keresztvalidációval, Pipeline-on bel
 | 1 | A negatív érték marad (valós mért értékként kezeljük) | 0.9120 ± 0.0183 | 0.895 | 0.879 | 18 s |
 | 2 | Negatív → NaN, medián-imputálás | 0.9117 ± 0.0184 | 0.891 | 0.879 | 19 s |
 | 3 | Negatív → NaN, medián-imputálás + hiányjelző oszlop | 0.9142 ± 0.0229 | 0.894 | 0.882 | 19 s |
+
+## Döntés
+
+**A Pipeline-ban `inf → NaN` átalakítás és medián-imputálás (`SimpleImputer(strategy="median")`) szerepel, a negatív `Flow IAT Min` értékek változatlanul maradnak.** Az imputálás a mostani adaton semmit nem változtat, mert nincs hiányzó érték. Védőhálóként szerepel, hogy egy új adaton előforduló hiány vagy végtelen érték ne okozzon hibát; a mediánt a train-halmazon illesztjük. A negatív értékek átírása a keresztvalidáció szerint nem javított (macro F1: 0,9120 vs 0,9117 vs 0,9142, zajon belül), a sorok törlése pedig az Audio osztály 23%-át és a Text 14%-át vinné el, ezért egyiket sem alkalmazzuk. A lépések a `src/preprocessing.py` `preprocessing_steps` függvényében vannak, ezt használja az ML7 és az ML8.
