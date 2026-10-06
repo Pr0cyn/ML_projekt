@@ -1,0 +1,10 @@
+# Python / uv
+.venv/
+__pycache__/
+*.pyc
+
+# Data (too large for git; raw CSV comes from Kaggle: daniaherzalla/tii-ssrc-23)
+data/
+
+# Trained models
+models/
