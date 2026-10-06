@@ -9,6 +9,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from sklearn.compose import ColumnTransformer
+from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import FunctionTransformer
 
 SELECTED_COLUMNS_JSON = Path(__file__).resolve().parent / "selected_columns.json"
@@ -55,8 +56,6 @@ def preprocessing_steps(columns: list[str]) -> list[tuple]:
 
     Negative `Flow IAT Min` values are intentionally left unchanged (ML6 decision).
     """
-    from sklearn.impute import SimpleImputer
-
     return [
         ("select", column_selector(columns)),
         ("inf_to_nan", inf_to_nan_step()),
