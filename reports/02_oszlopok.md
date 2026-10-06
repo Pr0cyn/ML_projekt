@@ -191,3 +191,7 @@ RandomForest (100 fa, `class_weight='balanced'`, random_state=42), 5-fold réteg
 | Label | kimarad | címkeoszlop | a célváltozóból származik, a modell bemeneteként szivárogtatná a választ | minden Traffic Type-hoz pontosan 1 Label érték tartozik; tisztaság: 65.6% |
 | Traffic Type | cél | célváltozó | ezt tanulja meg a modell | 8 osztály |
 | Traffic Subtype | kimarad | címkeoszlop | a célváltozó finomabb bontása, egyértelműen meghatározza | minden alosztály pontosan 1 Traffic Type-ba tartozik; tisztaság: 100.0% |
+
+## Döntés
+
+**A választott opció a B: 54 jellemző.** Kimaradt az azonosító és hálózati cím oszlop (6), a többi címkeoszlop (2), a konstans oszlop (5) és a korreláló párok gyengébbik tagja (18). A kiválasztott oszloplista a `src/selected_columns.json` fájlban van, ezt használja a Pipeline első lépése, így a teszthalmazon pontosan ugyanezek az oszlopok kerülnek a modellbe. A további, modellalapú szűkítést nem alkalmazzuk. Az ML9-ben a permutation importance megmutatja, mely oszlopok hagyhatók még el.
