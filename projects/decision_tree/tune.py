@@ -29,9 +29,13 @@ def describe(pipe: Pipeline) -> str:
     return f"mélység {m.get_depth()}, {m.get_n_leaves()} levél"
 
 
-def main() -> None:
-    pipe = Pipeline(preprocessing_steps(load_selected_columns()) + [
+def build_pipeline() -> Pipeline:
+    return Pipeline(preprocessing_steps(load_selected_columns()) + [
         ("model", DecisionTreeClassifier(class_weight="balanced", random_state=RANDOM_STATE))])
+
+
+def main() -> None:
+    pipe = build_pipeline()
     rule_text = (
         "**Egy standard hiba szabály:** megkeresem a legjobb átlagos macro F1-et, és az összes olyan "
         "kombinációt, amelynek átlaga ettől legfeljebb egy standard hibával marad el (standard hiba = a "

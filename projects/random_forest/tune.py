@@ -27,10 +27,14 @@ def describe(pipe: Pipeline) -> str:
     return f"{len(m.estimators_)} fa, összesen {nodes_str} csomópont, legmélyebb fa: {depth}"
 
 
+def build_pipeline(n_jobs: int = -1) -> Pipeline:
+    return Pipeline(preprocessing_steps(load_selected_columns()) + [
+        ("model", RandomForestClassifier(n_estimators=100, random_state=RANDOM_STATE, n_jobs=n_jobs))])
+
+
 def main() -> None:
     # n_jobs=1 inside the forest: GridSearchCV already runs the fits in parallel
-    pipe = Pipeline(preprocessing_steps(load_selected_columns()) + [
-        ("model", RandomForestClassifier(n_estimators=100, random_state=RANDOM_STATE, n_jobs=1))])
+    pipe = build_pipeline(n_jobs=1)
     rule_text = (
         "**Legjobb átlagos macro F1.** A RandomForestnél a rács elemei (`class_weight`, `min_samples_leaf`, "
         "`max_features`) az értelmezhetőséget nem változtatják érdemben, mert száz fa szavazata így is, úgy "
