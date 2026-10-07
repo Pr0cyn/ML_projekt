@@ -138,7 +138,7 @@ def main() -> None:
     rows = [(t, int(n), 100.0 * n / len(df)) for t, n in after_type.items()]
     out += ["### A végleges minta Traffic Type szerint", "",
             md_table(["Traffic Type", "Sorok", "%"], rows), "",
-            f"Végleges minta: **{len(df):,}** sor, {df.shape[1]} oszlop → `data/processed/sample.parquet`.".replace(",", " "), ""]
+            "Végleges minta: **" + f"{len(df):,}".replace(",", " ") + f"** sor, {df.shape[1]} oszlop → `data/processed/sample.parquet`.", ""]
     out += ["## 3. Ütköző címkék", "",
             f"A szűrés után **{int(conflict_after)}** sor olyan, hogy ugyanaz a jellemzővektor egynél több "
             "Traffic Type címkével is előfordul. Ezeket a sorokat egyetlen modell sem tudja mind helyesen "

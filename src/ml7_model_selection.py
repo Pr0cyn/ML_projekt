@@ -126,7 +126,7 @@ def main() -> None:
     }
 
     out = ["# 04 – Modellválasztás (ML7, döntési pont)", "",
-           f"Minden mérés a **train-halmazon** ({len(tr):,} sor) készült, ".replace(",", " ")
+           "Minden mérés a **train-halmazon** (" + f"{len(tr):,}".replace(",", " ") + " sor) készült, "
            + f"{N_SPLITS}-fold rétegzett keresztvalidációval (`StratifiedKFold`, shuffle, random_state={RANDOM_STATE}). "
            "Mind a négy modell ugyanazokon a foldokon fut. Minden jelölt egy teljes Pipeline: az ML5–ML6 "
            "előfeldolgozás (54 oszlop, inf → NaN, medián-imputálás) + a modell, így az imputálás és a "

@@ -1,6 +1,6 @@
 # 04 – Modellválasztás (ML7, döntési pont)
 
-Minden mérés a **train-halmazon** (212 230 sor) készült  5-fold rétegzett keresztvalidációval (`StratifiedKFold`, shuffle, random_state=42). Mind a négy modell ugyanazokon a foldokon fut. Minden jelölt egy teljes Pipeline: az ML5–ML6 előfeldolgozás (54 oszlop, inf → NaN, medián-imputálás) + a modell, így az imputálás és a skálázás foldonként csak a tanító részen illeszkedik. A teszthalmazt nem érintettem.
+Minden mérés a **train-halmazon** (212 230 sor) készült, 5-fold rétegzett keresztvalidációval (`StratifiedKFold`, shuffle, random_state=42). Mind a négy modell ugyanazokon a foldokon fut. Minden jelölt egy teljes Pipeline: az ML5–ML6 előfeldolgozás (54 oszlop, inf → NaN, medián-imputálás) + a modell, így az imputálás és a skálázás foldonként csak a tanító részen illeszkedik. A teszthalmazt nem érintettem.
 
 A modellek alapbeállításokkal futnak (hiperparaméter-hangolás nélkül), mindegyik `class_weight='balanced'`-del, hogy a ritka osztályok hibája nagyobb súllyal számítson. A feladat a DecisionTree, RandomForest és LogisticRegression összevetését kéri; a HistGradientBoosting a scikit-learn gradient boosting modellje, összehasonlításként szerepel.
 

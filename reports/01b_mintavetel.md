@@ -83,7 +83,7 @@ Mintavétel után: **310 139** sor.
 | Audio | 190 | 0.06 |
 | Background | 32 | 0.01 |
 
-Végleges minta: **303 186** sor  86 oszlop → `data/processed/sample.parquet`.
+Végleges minta: **303 186** sor, 86 oszlop → `data/processed/sample.parquet`.
 
 ## 3. Ütköző címkék
 

@@ -1,6 +1,6 @@
 # 01 – Hiperparaméter-hangolás: DecisionTree
 
-GridSearchCV a **train-halmazon** (212 230 sor)  5-fold rétegzett keresztvalidációval, ugyanazokon a foldokon, mint az ML7, macro F1 alapján. 28 kombináció × 5 fold = 140 tanítás, összesen 42 másodperc. A teszthalmazt nem érintettem.
+GridSearchCV a **train-halmazon** (212 230 sor), 5-fold rétegzett keresztvalidációval, ugyanazokon a foldokon, mint az ML7, macro F1 alapján. 28 kombináció × 5 fold = 140 tanítás, összesen 42 másodperc. A teszthalmazt nem érintettem.
 
 ## A rács
 

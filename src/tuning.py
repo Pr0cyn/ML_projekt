@@ -96,7 +96,7 @@ def run_grid_search(
             for r in table.itertuples()]
     grid_desc = [f"- `{k.removeprefix('model__')}`: {', '.join(str(v) for v in vals)}" for k, vals in param_grid.items()]
     out = [f"# 01 – Hiperparaméter-hangolás: {title}", "",
-           f"GridSearchCV a **train-halmazon** ({len(tr):,} sor), ".replace(",", " ")
+           "GridSearchCV a **train-halmazon** (" + f"{len(tr):,}".replace(",", " ") + " sor), "
            + f"{N_SPLITS}-fold rétegzett keresztvalidációval, ugyanazokon a foldokon, mint az ML7, macro F1 "
            f"alapján. {n_combos} kombináció × {N_SPLITS} fold = {n_combos * N_SPLITS} tanítás, "
            f"összesen {secs:.0f} másodperc. A teszthalmazt nem érintettem.", "",

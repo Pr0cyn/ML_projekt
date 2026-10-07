@@ -1,6 +1,6 @@
 # 01 – Hiperparaméter-hangolás: RandomForest
 
-GridSearchCV a **train-halmazon** (212 230 sor)  5-fold rétegzett keresztvalidációval, ugyanazokon a foldokon, mint az ML7, macro F1 alapján. 12 kombináció × 5 fold = 60 tanítás, összesen 133 másodperc. A teszthalmazt nem érintettem.
+GridSearchCV a **train-halmazon** (212 230 sor), 5-fold rétegzett keresztvalidációval, ugyanazokon a foldokon, mint az ML7, macro F1 alapján. 12 kombináció × 5 fold = 60 tanítás, összesen 133 másodperc. A teszthalmazt nem érintettem.
 
 ## A rács
 
