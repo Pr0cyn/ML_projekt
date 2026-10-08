@@ -6,5 +6,5 @@ __pycache__/
 # Data (too large for git; raw CSV comes from Kaggle: daniaherzalla/tii-ssrc-23)
 data/
 
-# Trained models
-models/
+# Trained models are committed (projects/*/models); only the smoke-test output is ignored
+projects/*/models/smoke_predictions.csv

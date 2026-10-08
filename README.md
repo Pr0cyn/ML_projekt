@@ -90,7 +90,7 @@ src/                              közös kód és az ML2–ML10 lépések szkri
   predict.py                      jóslás egy mentett Pipeline-nal
 projects/decision_tree/           DT-projekt: tune.py, evaluate.py, eredmények, riportok
 projects/random_forest/           RF-projekt: ugyanez
-  models/pipeline.joblib          a mentett végső Pipeline (nincs a repóban, újragenerálható)
+  models/pipeline.joblib          a mentett végső Pipeline (DT: 0,26 MB, RF: 25,7 MB)
   models/metadata.json            verziók, paraméterek, oszlopok, eredmények
 reports/                          riportok magyarul (01–07) és magyarázatok (b, c, d)
 NOTES.md                          munkanapló lépésenként
